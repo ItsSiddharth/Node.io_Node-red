@@ -34,8 +34,11 @@ for(int i=0;i<length1;i++){
   Serial.print(payload[i]); 
   
 }
-if(payload[0]==49) digitalWrite(D2,HIGH);    //ASCII VALUE OF '1' IS 49
+if(payload[0]==52) digitalWrite(D2,HIGH);    //ASCII VALUE OF '1' IS 49
 else if(payload[0]==48)digitalWrite(D2,LOW);//ASCII VALUE OF '2' IS 50
+else if(payload[0]==49)analogWrite(D2,50);
+else if(payload[0]==50)analogWrite(D2,110);
+else if(payload[0]==51)analogWrite(D2,180);
 Serial.println();
 }
 
